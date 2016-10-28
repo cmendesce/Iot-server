@@ -1,20 +1,25 @@
-iot-server-api:
-  container_name: api
-  image: cmendesce/iot-server-api
-  ports:
-   - "8080:8080"
-  links:
-   - database
-  environment:
-    FCM_URL: "https://fcm.googleapis.com/fcm/send"
-    FCM_API_KEY: "REPLACE"
+version: '2'
+services:
+  iot-server-api:
+    container_name: api
+    image: cmendesce/iot-server-api
+    ports:
+     - "8080:8080"
+    links:
+     - database
+    depends_on:
+     - database
+    entrypoint: ./wait-for-postgres.sh database
+    environment:
+      FCM_URL: "https://fcm.googleapis.com/fcm/send"
+      FCM_API_KEY: "REPLACE"
 
-database:
-  container_name: database
-  image: postgres:latest
-  ports:
-   - "5432:5432"
-  environment:
-    POSTGRES_PASSWORD: "iot_server"
-    POSTGRES_USER: "iot_server"
-    POSTGRES_DB: "iot_server"
+  database:
+    container_name: database
+    image: postgres:latest
+    ports:
+     - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "iot_server"
+      POSTGRES_USER: "iot_server"
+      POSTGRES_DB: "iot_server"
