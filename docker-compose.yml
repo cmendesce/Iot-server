@@ -6,19 +6,15 @@ iot-server-api:
   links:
    - database
   environment:
-    DATABASE_URL: "jdbc:postgres://iot_server:iot_server@database:5432/iot_server"
     FCM_URL: "https://fcm.googleapis.com/fcm/send"
     FCM_API_KEY: "REPLACE"
-    SPRING_DATASOURCE_DIRVER-CLASS-NAME: "org.postgresql.Driver"
-    SPRING_DATASOURCE_PASSWORD: "iot_server"
-    SPRING_DATASOURCE_USER: "iot_server"
-    SPRING_JPA_HIBERNATE_DDL-AUTO: "update"
 
 database:
   container_name: database
-  image: postgres:9.4.4
+  image: postgres:latest
   ports:
    - "5432:5432"
   environment:
     POSTGRES_PASSWORD: "iot_server"
     POSTGRES_USER: "iot_server"
+    POSTGRES_DB: "iot_server"

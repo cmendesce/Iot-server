@@ -1,5 +1,6 @@
 package com.github.carlinhafuji.iotserver;
 
+import org.flywaydb.core.Flyway;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class Application {
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(Application.class);
         app.setBannerMode(Banner.Mode.OFF);
-        app.setAdditionalProfiles("dev");
+        //app.setAdditionalProfiles("dev");
 
         Environment env = app.run(args).getEnvironment();
         log.info("Access URLs:\n----------------------------------------------------------\n\t" +
