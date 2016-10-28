@@ -6,7 +6,7 @@ iot-server-api:
   links:
    - database
   environment:
-    DATABASE_URL: "jdbc:postgres://iot_server:iot_server@localhost:5432/iot_server"
+    DATABASE_URL: "jdbc:postgres://iot_server:iot_server@database:5432/iot_server"
     FCM_URL: "https://fcm.googleapis.com/fcm/send"
     FCM_API_KEY: "REPLACE"
     SPRING_DATASOURCE_DIRVER-CLASS-NAME: "org.postgresql.Driver"
