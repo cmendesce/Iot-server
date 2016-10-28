@@ -1,13 +1,11 @@
 version: '2'
 services:
-  iot-server-api:
+  api:
     container_name: api
     image: cmendesce/iot-server-api
     ports:
      - "8080:8080"
     links:
-     - database
-    depends_on:
      - database
     entrypoint: ./wait-for-postgres.sh database
     environment:
