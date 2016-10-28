@@ -7,7 +7,7 @@ services:
      - "8080:8080"
     links:
      - database
-    entrypoint: ./wait-for-postgres.sh database
+    #entrypoint: ./wait-for-postgres.sh database iot_server
     environment:
       FCM_URL: "https://fcm.googleapis.com/fcm/send"
       FCM_API_KEY: "REPLACE"
