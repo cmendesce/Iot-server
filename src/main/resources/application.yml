@@ -1,0 +1,28 @@
+server:
+    port: 8080
+
+spring:
+    profiles:
+        active: dev
+    datasource:
+        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+        url: jdbc:postgresql://database:5432/iot_server
+        databaseName: iot_server
+        serverName: localhost
+        username: iot_server
+        password: iot_server
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQL82Dialect
+        database: POSTGRESQL
+        show_sql: true
+        generate-ddl: false
+        hibernate:
+          ddl-auto: none
+
+hibernate:
+    properties:
+        hbm2ddl: none
+
+flyway:
+  baseline-version: 1
+  baselineOnMigrate: true
