@@ -1,8 +1,8 @@
-# Iot-server
+# IOT Server
 
-This is an application for receive requests from iot devices and send them to firebase cloud message.
+This is an application for receive requests from IOT devices, process the request and send them to Firebase Cloud Message.
 
-* Configuration
+## Configuration
 Set the API Key of Firebase Cloud Message in the ```application.yml``` file.
 
 ## Building
