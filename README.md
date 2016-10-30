@@ -2,14 +2,16 @@
 
 This is an application for receive requests from iot devices and send them to firebase cloud message.
 
-## Configuration
+* Configuration
+Set the API Key of Firebase Cloud Message in the ```application.yml``` file.
 
-* Postgres
-```
-export DATABASE_URL=postgres://{username}:{passoword}@{host}:5432/{database}
-```
-* Firebase Cloud Message
-```
-export FCM_URL=https://fcm.googleapis.com/fcm/send
-export FCM_API_KEY={YOUR API KEY}
-```
+## Building
+- Install docker
+- Install docker-compose 
+- Install java 8
+- Install maven
+
+After all dependencies installed, run ```mvn package``` to genenate docker images and build application. 
+Now just run ```docker-compose up``` and enjoy it.
+
+
